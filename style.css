@@ -66,6 +66,7 @@ th,
 td,
 article,
 aside,
+canvas,
 details,
 embed,
 figure,
@@ -81,7 +82,8 @@ section,
 summary,
 time,
 mark,
-audio {
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -129,7 +131,7 @@ body {
 	color: #ffffff;
 }
 .text-color-red {
-	color: #ed0a3f;
+	color: #7eccc1;
 }
 .text-color-black {
 	color: #000000;
@@ -137,6 +139,7 @@ body {
 .text-color-gray {
 	color: #888888;
 }
+
 /* ------ Text styles ------ */
 .underline {
 	text-decoration: underline;
@@ -165,7 +168,10 @@ h1 {
 }
 
 h2 {
-	font-size: 52.5%;
+	font-family: 'Gemunu Libre', sans-serif;
+	line-height: 140%;
+	font-size: 100px;
+	font-size: 2.222em;
 }
 
 h3 {
@@ -231,14 +237,12 @@ p.size-small {
 .size-medium {
 	line-height: 180%;
 	font-size: 20px;
-	font-family: 'Gemunu Libre', sans-serif;
 }
 
 .size-large {
 	line-height: 160%;
 	font-size: 24px;
 	margin-bottom: 4vh;
-	font-family: 'Gemunu Libre', sans-serif;
 }
 
 b {
@@ -290,7 +294,7 @@ a.text-color-white:visited {
 a.text-color-red,
 a.text-color-red:after,
 a.text-color-red:visited {
-	color: #ed0a3f;
+	color: #7eccc1;
 }
 
 /* ------ Hover states ------ */
@@ -367,6 +371,7 @@ video {
 	}
 }
 .label-logo:after {
+	font-family: 'Gemunu Libre', sans-serif;
 	font-size: 20px;
 	content: "ryan.";
 }
@@ -420,7 +425,7 @@ video {
 	box-sizing: inherit;
 	height: 4px; /* control the height of the progress bar */
 	width: 100%;
-	background-color: #ed0a3f;
+	background-color: #7eccc1;
 	-webkit-transform-origin: 0 50%;
 	transform-origin: 0 50%;
 	-webkit-transition: -webkit-transform 50ms;
@@ -465,7 +470,7 @@ video {
 	content: "RESUME";
 }
 .label-error:after {
-	content: "OOOPS!";
+	content: "OOPS!";
 }
 .label-error:hover:after {
 	content: "HOME";
@@ -495,7 +500,8 @@ video {
 	0% {
 		opacity: 0;
 		transform: translateY(30vh);
-	}
+	} /* WORK ON THISSS! */
+	/* 	0% {transform: translateY(100%);} */
 	100% {
 		opacity: 1;
 		transform: translateY(0%);
@@ -580,7 +586,7 @@ video {
 }
 @media screen and (max-width: 480px) {
 	.bg-photo {
-		left: -8%;
+		left: -48%;
 	}
 }
 
@@ -611,7 +617,6 @@ video {
 		text-align: center;
 		width: 100%;
 		font-family: 'Gemunu Libre', sans-serif;
-		text-transform: uppercase;
 		color: #ffffff;
 		position: fixed;
 		bottom: 4%;
@@ -658,6 +663,9 @@ video {
 /*	=====================================================================
 								WORK LIST							
 	===================================================================== */
+h2 {
+	font-size: 52.5%;
+}
 
 #projects-container {
 	display: inline-flex;
@@ -712,6 +720,144 @@ video#video {
 }
 .videoWrapper:hover .vid-overlay {
 	opacity: 1;
+}
+
+/*	=====================================================================
+								PROJECT PAGE							
+	===================================================================== */
+
+.block-image-overflow {
+	width: 100%;
+	overflow: hidden;
+}
+
+.hero-image {
+	width: 100vw;
+	height: 90vh;
+	overflow: hidden;
+	margin: 30vh 0;
+}
+@media screen and (max-width: 767px) {
+	.hero-image {
+		margin: 20vh 0;
+	}
+}
+.hero-image img {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
+@media screen and (max-width: 767px) {
+	.hero-image img {
+		background-position: right bottom;
+	}
+}
+
+.max-width-70 {
+	max-width: 70%;
+	margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+	.max-width-70 {
+		max-width: 100%;
+		margin: auto;
+	}
+}
+
+.links a {
+	display: block;
+	margin: 4vh 0;
+	font-family: 'Gemunu Libre', sans-serif;
+	font-size: 19px;
+}
+
+.images {
+	margin: 8vh 0;
+}
+@media screen and (max-width: 767px) {
+	.images {
+		margin: 4vh 0;
+	}
+}
+
+.images img {
+	margin: 4vh 0;
+}
+@media screen and (max-width: 767px) {
+	.images img {
+		margin: 2vh 0;
+	}
+}
+
+.video {
+	margin: 8vh 0;
+}
+@media screen and (max-width: 767px) {
+	.video {
+		margin: 4vh 0;
+	}
+}
+
+/* iPhone video container */
+.iphone-video {
+	width: 100%;
+	height: 80vh;
+	display: -webkit-flex; /* Safari */
+	display: flex;
+	-webkit-align-items: center; /* Safari */
+	align-items: center;
+	position: relative;
+}
+
+.iphone-notch {
+	background-image: url(../img/devices-iphone-notch.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 20%;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	margin-top: -17%;
+}
+
+.iphone-mask {
+	-moz-border-radius: 28px;
+	-webkit-border-radius: 28px;
+	border-radius: 28px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	height: 70vh;
+}
+.iphone-video video {
+	width: auto;
+	height: 70vh;
+}
+.devices-iphone {
+	background-image: url(../img/devices-iphone.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+}
+
+@media screen and (max-width: 767px) {
+	.iphone-video {
+		height: 60vh;
+	}
+	.iphone-mask {
+		-moz-border-radius: 18px;
+		-webkit-border-radius: 18px;
+		border-radius: 18px;
+		height: 52vh;
+	}
+	.iphone-video video {
+		height: 52vh;
+	}
 }
 .shapes {
 	width: 200px;
